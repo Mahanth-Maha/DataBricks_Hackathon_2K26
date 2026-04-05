@@ -15,6 +15,9 @@ Nyaya Deepam helps legal professionals, students, and citizens navigate the tran
 - _"Explain Section 33 IPC and its BNS equivalent."_
 
 ---
+## 🧠 Architecture
+
+![Architecture](diagrams/nyaya_deepam_inference_flowchart.svg)
 
 ## 📁 Project Structure
 
