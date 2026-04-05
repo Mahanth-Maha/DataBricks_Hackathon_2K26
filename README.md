@@ -6,6 +6,9 @@ A hybrid Retrieval-Augmented Generation (RAG) system built for Indian criminal l
 
 ---
 
+<img width="3199" height="1544" alt="image" src="https://github.com/user-attachments/assets/eb786887-dbcf-4f5e-ae00-d9a890461171" />
+
+
 ##  Project Overview
 
 Nyaya Deepam helps legal professionals, students, and citizens navigate the transition from the IPC (1860) to the BNS (2023) — India's new criminal code effective **1 July 2024**. It answers questions like:
@@ -15,7 +18,7 @@ Nyaya Deepam helps legal professionals, students, and citizens navigate the tran
 - _"Explain Section 33 IPC and its BNS equivalent."_
 
 ---
-## 🧠 Architecture
+## Architecture
 
 ![Architecture](diagrams/nyaya_deepam_inference_flowchart.svg)
 
@@ -52,7 +55,7 @@ nyaya_deepam/
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Prerequisites
 
@@ -72,7 +75,7 @@ HF_TOKEN=hf_xxxxxxxxxxxxxxxxxxxxxxxx
 ### 3. Build the Index (Block 1)
 
 ```bash
-python block1_build.py
+# RUN THE NOTEBOOK
 ```
 
 This will:
@@ -85,12 +88,12 @@ This will:
 ### 4. Run Inference (Block 3 — Recommended)
 
 ```bash
-python block3_key_search.py
+# RUN THE NOTEBOOK
 ```
 
 ---
 
-## 🧠 System Architecture
+## System Architecture
 
 ### Retrieval Strategy: Hybrid Search
 
@@ -124,7 +127,7 @@ Before RAG retrieval, Block 3 attempts a **deterministic exact match**:
 
 ---
 
-## 🤖 Models
+## Models
 
 | Component | Model | Purpose |
 |-----------|-------|---------|
@@ -148,7 +151,7 @@ model = PeftModel.from_pretrained(base_model, "./checkpoints")
 
 ---
 
-## 📊 Data Format
+## Data Format
 
 ### Raw JSONL Schema
 
@@ -182,7 +185,7 @@ Mapping and Changes:
 
 ---
 
-## 🔧 API Reference
+## API Reference
 
 ### `answer_with_rag(user_query, top_k=4, mode="auto", max_new_tokens=256)`
 
@@ -221,6 +224,18 @@ Mapping and Changes:
 
 ## 📝 Example Queries
 
+Examples:
+
+### Example 1
+<img width="1876" height="793" alt="image" src="https://github.com/user-attachments/assets/85c4a6b2-9201-4a49-b339-d0595c080506" />
+
+### Example 2
+<img width="1843" height="712" alt="image" src="https://github.com/user-attachments/assets/b22984c6-e93a-4e46-88d0-c383b5e3e3c0" />
+
+### Example 3
+<img width="1831" height="718" alt="image" src="https://github.com/user-attachments/assets/0f100e7a-f596-462d-bdf4-4121656245df" />
+
+### Commands
 ```python
 # Simple section lookup
 answer_with_rag("What is Section 420 IPC?", mode="atomic")
@@ -253,7 +268,7 @@ answer_with_rag("What does Section 33 IPC define?")
 
 ---
 
-## 🏛️ Legal Context
+## Legal Context
 
 | Law | Full Name | Year | Status |
 |-----|-----------|------|--------|
@@ -282,7 +297,7 @@ The BNS modernises India's criminal code by:
 
 ---
 
-## 🔑 Environment Variables
+## Environment Variables
 
 | Variable | Required | Description |
 |----------|----------|-------------|
@@ -291,7 +306,7 @@ The BNS modernises India's criminal code by:
 
 ---
 
-## 📌 Known Limitations
+## Known Limitations
 
 - Section number regex (`extract_act_and_section_from_query`) covers common formats but may miss edge cases like `Section 3A` or `Section 1(3)(a)(ii)`
 - Composite chunks are only built for sections present in the mapping JSONL
@@ -300,13 +315,13 @@ The BNS modernises India's criminal code by:
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Pull requests welcome. For major changes, open an issue first. Please ensure all test queries from `block3_key_search.py` continue to produce correct answers.
 
 ---
 
-## 📜 License
+## License
 
 This project is for educational and research purposes. Legal text (BNS/IPC) is sourced from official Government of India publications and is in the public domain.
 
