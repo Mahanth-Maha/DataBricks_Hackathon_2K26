@@ -6,7 +6,7 @@ A hybrid Retrieval-Augmented Generation (RAG) system built for Indian criminal l
 
 ---
 
-## 🏗️ Project Overview
+##  Project Overview
 
 Nyaya Deepam helps legal professionals, students, and citizens navigate the transition from the IPC (1860) to the BNS (2023) — India's new criminal code effective **1 July 2024**. It answers questions like:
 
